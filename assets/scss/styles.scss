@@ -1,0 +1,39 @@
+/* fonts
+ ******************************/
+/* Karla font
+ ***************/
+@font-face {
+    font-family: Chivo;
+    src: url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+}
+
+/* Colors
+ ******************************/
+/* Primary
+ ***************/
+$green: #54E6AF;
+$blue-950: #121725;
+$blue-900: #2C344B;
+$blue-600: #5A668A;
+$blue-300: #5A668A;
+$white: #FFFFFF;
+$red: #FB3E3E;
+
+/* Global Variables
+ ******************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $blue-950;
+}
+
+/* Body Variables
+ ******************************/
+main {
+    display: flex;
+    flex-direction: column;
+}
