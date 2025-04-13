@@ -2,10 +2,7 @@
  ******************************/
 /* Karla font
  ***************/
-@font-face {
-  font-family: Chivo;
-  src: url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap");
-}
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap");
 /* Colors
  ******************************/
 /* Primary
@@ -19,12 +16,139 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   background-color: #121725;
 }
 
 /* Body Variables
  ******************************/
 main {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+main::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/mobile/image-host.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.background-img {
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  opacity: 0.1;
+}
+
+.pod-request-container {
+  margin: 110.5px 0;
+  width: 303px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.pod-request-container__logo {
+  margin-bottom: 16px;
+  width: 135px;
+}
+.pod-request-container__title {
+  margin-bottom: 16px;
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 120%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #54E6AF;
+}
+.pod-request-container__title span {
+  color: #FFFFFF;
+}
+.pod-request-container__description {
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: #C2CBE5;
+}
+.pod-request-container__partners {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pod-request-container__partner-logo:nth-child(1) {
+  width: 56px;
+}
+.pod-request-container__partner-logo:nth-child(2) {
+  width: 45px;
+}
+.pod-request-container__partner-logo:nth-child(3) {
+  width: 73px;
+}
+.pod-request-container__partner-logo:nth-child(4) {
+  width: 76px;
+}
+.pod-request-container__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.pod-request-container__email-input {
+  width: 100%;
+  border: none;
+  padding: 8px 32px;
+  background-color: #2C344B;
+  border-radius: 999px;
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 200%;
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+.pod-request-container__email-input::placeholder {
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+.pod-request-container__email-input:focus {
+  outline: none;
+}
+.pod-request-container__submit-btn {
+  padding: 8px 0;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 32px;
+  gap: 8px;
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 200%;
+  color: #121725;
+  background: #54E6AF;
+  box-shadow: 0px 2px 4px rgba(84, 230, 175, 0.14);
+  border-radius: 28px;
 }
