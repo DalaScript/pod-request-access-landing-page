@@ -151,11 +151,11 @@ main {
     }
 
     &__email-input {
+        padding-left: 30px;
         width: 100%;
         height: 44px;
+        border: 2px solid $blue-900;
         
-        border: none;
-        padding-left: 32px;
 
         background-color: $blue-900;
         border-radius: 999px;
@@ -203,7 +203,7 @@ main {
 
     &__form-required-text {
         display: none;
-        
+
         font-family: 'Chivo';
         font-style: normal;
         font-weight: 700;
@@ -211,6 +211,10 @@ main {
         line-height: 14px;
 
         color: $red;
+
+        &--active {
+            display: block;
+        }
     }
     
 }
@@ -315,7 +319,7 @@ main {
 
         &__email-input {
             height: 52px;
-            padding-left: 28px;
+            padding-left: 26px;
         }
 
         &__submit-btn {
