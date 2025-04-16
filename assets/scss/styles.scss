@@ -271,6 +271,9 @@ main {
 
         &__partners {
             padding-top: 24px;
+
+            justify-content: flex-start;
+            gap: 40px;
             order: 3;
         }
 
@@ -309,4 +312,47 @@ main {
             right: 4px;
         }
     }
+}
+
+@media only screen and (min-width: 1440px) {
+    main {
+        overflow-x: hidden;
+        &::before {
+            width: 960px;
+            height: 654px;
+            background-image: url("../images/desktop/image-host.jpg");
+            
+            top: 152px;
+            right: -64px;
+        }
+
+        &::after {
+            position: absolute;
+            top: 755px;
+            right: 0;
+        }
+    }
+
+    .pod-request-container {
+        margin: 153px 544px 153px 160px;
+        width: 736px;
+
+        &__inner-content {
+            padding-right: 78px;
+        }
+
+        &__text-content {
+            max-width: 100%;
+        }
+
+        &__title {
+            margin-bottom: 24px;
+            height: 116px;
+        }
+
+        &__description {
+            max-inline-size: 448px;
+        }
+    }
+
 }
