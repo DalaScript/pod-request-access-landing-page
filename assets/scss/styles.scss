@@ -65,17 +65,23 @@ main {
 }
 
 .pod-request-container {
-    margin: 110.5px 0;
+    margin: 36px;
+    padding: 110.5px 0;
     width: 303px;
     
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 56px;
 
     &__logo {
-        margin-bottom: 16px;
         width: 135px;
+    }
+
+    &__inner-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
     }
 
     &__title {
@@ -165,8 +171,6 @@ main {
 
         &::placeholder {
             color: $white;
-
-            opacity: 0.5;
         }
 
         &:focus {
@@ -183,7 +187,6 @@ main {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 8px 32px;
         gap: 8px;
 
         font-family: 'Chivo';
@@ -199,4 +202,111 @@ main {
         border-radius: 28px;
     }
     
+}
+
+/* responsivnes
+ ******************************/
+@media only screen and (min-width: 768px) {
+    main {
+        overflow-x: hidden;
+        &::before {
+            width: 460px;
+            height: 868px;
+            background-image: url("../images/desktop/image-host.jpg");
+    
+            top: -1px;
+            right: 0;
+            opacity: 1;
+        }
+
+        &::after {
+            content: '';
+            width: 232px;
+            height: 104px;
+            background-image: url("../images/desktop/bg-pattern-dots.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            position: absolute;
+            top: 818px;
+            right: -128px;
+        }
+    }
+
+    .pod-request-container {
+        margin: 156px 132px 156px 44px;
+        padding: 0;
+        width: 592px;
+        
+        align-items: flex-start;
+        gap: 104px;
+
+        &__inner-content {
+            padding-top: 88px;
+            padding-right: 45px;
+            width: 100%;
+            background-color: $blue-950;
+        }
+
+        &__text-content {
+            max-width: 448px;
+        }
+
+        &__title {
+            margin-bottom: 24px;
+            height: 174px;
+
+            font-size: 48px;
+            line-height: 120%;
+            text-align: start;
+        }
+
+        &__description {
+            text-align: start;
+
+            font-size: 18px;
+            line-height: 150%;
+        }
+
+        &__partners {
+            padding-top: 24px;
+            order: 3;
+        }
+
+        &__partner-logo {
+            &:nth-child(1) {
+                width: 96px;
+            }
+    
+            &:nth-child(2) {
+                width: 78px;
+            }
+    
+            &:nth-child(3) {
+                width: 125px;
+            }
+    
+            &:nth-child(4) {
+                width: 129px;
+            }
+        }
+
+        &__form {
+            width: 448px;
+
+            position: relative;
+        }
+
+        &__email-input {
+            padding: 12px 180px 12px 26px;
+        }
+
+        &__submit-btn {
+            width: 173px;
+            position: absolute;
+            top: 4px;
+            right: 4px;
+        }
+    }
 }

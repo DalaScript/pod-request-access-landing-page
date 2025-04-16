@@ -52,16 +52,21 @@ main::before {
 }
 
 .pod-request-container {
-  margin: 110.5px 0;
+  margin: 36px;
+  padding: 110.5px 0;
   width: 303px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 56px;
 }
 .pod-request-container__logo {
-  margin-bottom: 16px;
   width: 135px;
+}
+.pod-request-container__inner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 .pod-request-container__title {
   margin-bottom: 16px;
@@ -127,7 +132,6 @@ main::before {
 }
 .pod-request-container__email-input::placeholder {
   color: #FFFFFF;
-  opacity: 0.5;
 }
 .pod-request-container__email-input:focus {
   outline: none;
@@ -140,7 +144,6 @@ main::before {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 32px;
   gap: 8px;
   font-family: "Chivo";
   font-style: normal;
@@ -151,4 +154,90 @@ main::before {
   background: #54E6AF;
   box-shadow: 0px 2px 4px rgba(84, 230, 175, 0.14);
   border-radius: 28px;
+}
+
+/* responsivnes
+ ******************************/
+@media only screen and (min-width: 768px) {
+  main {
+    overflow-x: hidden;
+  }
+  main::before {
+    width: 460px;
+    height: 868px;
+    background-image: url("../images/desktop/image-host.jpg");
+    top: -1px;
+    right: 0;
+    opacity: 1;
+  }
+  main::after {
+    content: "";
+    width: 232px;
+    height: 104px;
+    background-image: url("../images/desktop/bg-pattern-dots.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 818px;
+    right: -128px;
+  }
+
+  .pod-request-container {
+    margin: 156px 132px 156px 44px;
+    padding: 0;
+    width: 592px;
+    align-items: flex-start;
+    gap: 104px;
+  }
+  .pod-request-container__inner-content {
+    padding-top: 88px;
+    padding-right: 45px;
+    width: 100%;
+    background-color: #121725;
+  }
+  .pod-request-container__text-content {
+    max-width: 448px;
+  }
+  .pod-request-container__title {
+    margin-bottom: 24px;
+    height: 174px;
+    font-size: 48px;
+    line-height: 120%;
+    text-align: start;
+  }
+  .pod-request-container__description {
+    text-align: start;
+    font-size: 18px;
+    line-height: 150%;
+  }
+  .pod-request-container__partners {
+    padding-top: 24px;
+    order: 3;
+  }
+  .pod-request-container__partner-logo:nth-child(1) {
+    width: 96px;
+  }
+  .pod-request-container__partner-logo:nth-child(2) {
+    width: 78px;
+  }
+  .pod-request-container__partner-logo:nth-child(3) {
+    width: 125px;
+  }
+  .pod-request-container__partner-logo:nth-child(4) {
+    width: 129px;
+  }
+  .pod-request-container__form {
+    width: 448px;
+    position: relative;
+  }
+  .pod-request-container__email-input {
+    padding: 12px 180px 12px 26px;
+  }
+  .pod-request-container__submit-btn {
+    width: 173px;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
 }
