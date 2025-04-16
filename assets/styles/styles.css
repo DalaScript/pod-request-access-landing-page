@@ -118,8 +118,9 @@ main::before {
 }
 .pod-request-container__email-input {
   width: 100%;
+  height: 44px;
   border: none;
-  padding: 8px 32px;
+  padding-left: 32px;
   background-color: #2C344B;
   border-radius: 999px;
   font-family: "Chivo";
@@ -128,23 +129,21 @@ main::before {
   font-size: 14px;
   line-height: 200%;
   color: #FFFFFF;
-  opacity: 0.5;
 }
 .pod-request-container__email-input::placeholder {
-  color: #FFFFFF;
+  color: #ffffff80;
 }
 .pod-request-container__email-input:focus {
   outline: none;
 }
+.pod-request-container__email-input--required {
+  border: 2px solid #FB3E3E;
+}
 .pod-request-container__submit-btn {
-  padding: 8px 0;
   width: 100%;
+  height: 44px;
   border: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+  position: relative;
   font-family: "Chivo";
   font-style: normal;
   font-weight: 700;
@@ -154,6 +153,15 @@ main::before {
   background: #54E6AF;
   box-shadow: 0px 2px 4px rgba(84, 230, 175, 0.14);
   border-radius: 28px;
+}
+.pod-request-container__form-required-text {
+  display: none;
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FB3E3E;
 }
 
 /* responsivnes
@@ -231,16 +239,21 @@ main::before {
   }
   .pod-request-container__form {
     width: 448px;
+    align-items: flex-start;
     position: relative;
   }
   .pod-request-container__email-input {
-    padding: 12px 180px 12px 26px;
+    height: 52px;
+    padding-left: 28px;
   }
   .pod-request-container__submit-btn {
     width: 173px;
     position: absolute;
     top: 4px;
     right: 4px;
+  }
+  .pod-request-container__form-required-text {
+    margin-left: 32px;
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -276,5 +289,30 @@ main::before {
   }
   .pod-request-container__description {
     max-inline-size: 448px;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .pod-request-container__submit-btn {
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .pod-request-container__submit-btn::before {
+    content: "Request Access";
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    position: absolute;
+    background-color: #FFFFFF;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    pointer-events: none;
+  }
+  .pod-request-container__submit-btn:hover::before {
+    opacity: 0.5;
   }
 }

@@ -152,9 +152,10 @@ main {
 
     &__email-input {
         width: 100%;
+        height: 44px;
         
         border: none;
-        padding: 8px 32px;
+        padding-left: 32px;
 
         background-color: $blue-900;
         border-radius: 999px;
@@ -167,27 +168,25 @@ main {
 
         color: $white;
 
-        opacity: 0.5;
-
         &::placeholder {
-            color: $white;
+            color: #ffffff80;
         }
 
         &:focus {
             outline: none;
         }
+
+        &--required {
+            border: 2px solid $red;
+        }
     }
 
     &__submit-btn {
-        padding: 8px 0;
         width: 100%;
+        height: 44px;
         border: none;
 
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
+        position: relative;
 
         font-family: 'Chivo';
         font-style: normal;
@@ -200,6 +199,18 @@ main {
         background: $green;
         box-shadow: 0px 2px 4px rgba(84, 230, 175, 0.14);
         border-radius: 28px;
+    }
+
+    &__form-required-text {
+        display: none;
+        
+        font-family: 'Chivo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 14px;
+
+        color: $red;
     }
     
 }
@@ -297,12 +308,14 @@ main {
 
         &__form {
             width: 448px;
+            align-items: flex-start;
 
             position: relative;
         }
 
         &__email-input {
-            padding: 12px 180px 12px 26px;
+            height: 52px;
+            padding-left: 28px;
         }
 
         &__submit-btn {
@@ -310,6 +323,10 @@ main {
             position: absolute;
             top: 4px;
             right: 4px;
+        }
+
+        &__form-required-text {
+            margin-left: 32px;
         }
     }
 }
@@ -355,4 +372,35 @@ main {
         }
     }
 
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .pod-request-container{
+        &__submit-btn {
+            overflow: hidden;
+            cursor: pointer;
+            &::before {
+                content: 'Request Access';
+                width: 100%;
+                height: 100%;
+                border-radius: 28px;
+                position: absolute;
+                background-color: $white;
+                top: 0;
+                left: 0;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease-out;
+                pointer-events: none;
+            }
+            &:hover {
+                &::before {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
 }
